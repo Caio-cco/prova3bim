@@ -19,10 +19,15 @@ export async function aprovarPermissao(salaId, usuarioId) {
     `
 
     const [info] = await connection.query(comando, [salaId, usuarioId])
-    
+
 }
 
 
 export async function verificarPermissaoSala(salaId, usuarioId) {
-    
+    const comando = `
+    SELECT id 
+        FROM sala 
+        WHERE sala_id = ? AND usuario_id = ? AND aprovado = TRUE;
+    `
+    const [info] = await connection.query(comando, [salaId, usuarioId])
 }

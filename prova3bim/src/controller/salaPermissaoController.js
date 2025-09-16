@@ -29,6 +29,9 @@ endpoints.post('/sala/:sala/aprovar/:usuario', autenticador, async (req, resp) =
     if(!aprovado){
         
     }
+    if(aprovado === true){
+        
+    }
     
 
 });
