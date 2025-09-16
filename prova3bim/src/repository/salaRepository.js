@@ -16,6 +16,12 @@ export async function inserirSala(nome, usuarioId) {
 
 
 export async function buscarSalaPorId(salaId) {
-   
+    const comando = `
+        SELECT id, nome, usuario_id
+          FROM sala
+         WHERE id = ?;
+    `;
+    const [linhas] = await connection.query(comando, [salaId]);
+    return linhas[0]; 
 }
 
