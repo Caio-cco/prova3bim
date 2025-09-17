@@ -11,8 +11,8 @@ export async function validarCredenciais(email, senha) {
        and senha = MD5(?)
   `;
 
-  const [registros] = await connection.query(comando, [email, senha]);
-  return registros[0];
+  const [registros] = await connection.query(comando, [email, senha])
+  return registros[0]
 }
 
 
@@ -27,5 +27,5 @@ export async function criarConta(novoLogin) {
     novoLogin.email,
     novoLogin.senha
   ]);
-  return info.insertId;
+  return info.insertId
 }

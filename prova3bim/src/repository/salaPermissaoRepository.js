@@ -17,7 +17,7 @@ export async function aprovarPermissao(salaId, usuarioId) {
             SET aprovado = TRUE
         WHERE sala_id = ? AND usuario_id = ?;
         `
-const [info] = await connection.query(comando, [salaId, usuarioId]);
+const [info] = await connection.query(comando, [salaId, usuarioId])
 
 }
 

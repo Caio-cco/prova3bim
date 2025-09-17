@@ -21,7 +21,7 @@ export async function buscarSalaPorId(salaId) {
           FROM sala
          WHERE id = ?;
     `;
-    const [linhas] = await connection.query(comando, [salaId]);
-    return linhas[0]; 
+    const [info] = await connection.query(comando, [salaId])
+    return info[0]
 }
 

@@ -10,7 +10,7 @@ const autenticador = getAuthentication();
 
 endpoints.post('/sala', autenticador, async (req, resp) => {
     
-        const { nome } = req.body
+        const {nome} = req.body
         const usuarioId = req.user.id  
         const permissao = true
 
